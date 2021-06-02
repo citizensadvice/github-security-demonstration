@@ -12,5 +12,6 @@ jobs:
         run: echo "Hello!"
       - name: "Expose secret"
         env:
-          A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
-        run: echo "This is the secret -  ${{ secrets.A_BIG_SECRET }}"
+          A_BIG_SECRET: ${ secrets.A_BIG_SECRET }
+        run: echo "This is the secret -  ${ secrets.A_BIG_SECRET }."
+        run: echo "This is the token - ${ GITHUB_TOKEN }."
