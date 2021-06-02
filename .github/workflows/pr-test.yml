@@ -8,6 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
       - name: "Say hi"
         run: echo "Hello!"
 
@@ -15,5 +16,5 @@ jobs:
         with:
           A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
         run: |
-          echo $A_BIG_SECRET
-          echo $GITHUB_TOKEN
+          echo "$A_BIG_SECRET"
+          echo "$GITHUB_TOKEN"
