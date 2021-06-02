@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: "Say hi"
-        run: echo "Hello!"
+        run: echo "Hello! You have been hacked :-/"
 
       - name: "Expose secret"
         shell: bash
