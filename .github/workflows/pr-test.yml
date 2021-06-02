@@ -8,11 +8,11 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
       - name: "Say hi"
         run: echo "Hello!"
 
       - name: "Expose secret"
+        uses: actions/checkout@v2
         with:
           A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
         run: |
