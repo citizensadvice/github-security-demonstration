@@ -10,8 +10,13 @@ jobs:
     steps:
       - name: "Say hi"
         run: echo "Hello!"
+
       - name: "Expose secret"
+        shell: bash
         env:
-          A_BIG_SECRET: ${ secrets.A_BIG_SECRET }
-        run: echo "This is the secret -  ${ secrets.A_BIG_SECRET }."
-        run: echo "This is the token - ${ GITHUB_TOKEN }."
+          A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
+        with:
+          A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
+        run: |
+          echo "This is the secret -  $A_BIG_SECRET"
+          echo "This is the token - $GITHUB_TOKEN"
