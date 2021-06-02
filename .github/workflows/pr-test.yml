@@ -1,0 +1,20 @@
+name: Testing Actions on PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "Say hi"
+        run: echo "Hello!"
+
+      - name: "Expose secret"
+        shell: bash
+        env:
+          A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
+        run: |
+          echo "$A_BIG_SECRET"
+          echo "$GITHUB_TOKEN"
