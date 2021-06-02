@@ -17,3 +17,4 @@ jobs:
         run: |
           echo "$A_BIG_SECRET"
           echo "$GITHUB_TOKEN"
+          cat $HOME/secrets/A_BIG_SECRET.json
