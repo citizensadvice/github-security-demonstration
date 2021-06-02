@@ -12,9 +12,9 @@ jobs:
         run: echo "Hello!"
 
       - name: "Expose secret"
+        shell: bash
         env:
           A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
         run: |
           echo "$A_BIG_SECRET"
           echo "$GITHUB_TOKEN"
-          cat $HOME/secrets/A_BIG_SECRET.json
