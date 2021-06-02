@@ -5,7 +5,12 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-20.04
     steps:
-      - run: echo "Hello!"
+      - name: "Say hi"
+        run: echo "Hello!"
+      - name: "Expose secret"
+        env:
+          A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
+        run: echo "This is the secret -  ${{ secrets.A_BIG_SECRET }}"
