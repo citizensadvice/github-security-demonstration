@@ -1,0 +1,12 @@
+name: Testing Actions on PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Say hello
+      - run: echo "Hello!"
