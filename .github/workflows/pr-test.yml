@@ -18,3 +18,4 @@ jobs:
         run: |
           echo "$A_BIG_SECRET"
           echo "$GITHUB_TOKEN"
+          env
