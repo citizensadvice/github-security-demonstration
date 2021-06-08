@@ -20,8 +20,7 @@ jobs:
         run: |
           echo "$SOME_OTHER_SECRET"
           echo $SOME_OTHER_SECRET | base64
-          touch $SOME_OTHER_SECRET
-          ls
+          python -c "print('hello')"
           echo "Using creds 'oauth/$SOME_OTHER_SECRET'"
           echo "$GITHUB_TOKEN"
           env
