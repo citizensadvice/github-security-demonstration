@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "$SOME_OTHER_SECRET"
           echo $SOME_OTHER_SECRET | base64
-          python -c "print('hello')"
+          python -c "import os; print(os.environ['SOME_OTHER_SECRET'])"
           echo "Using creds 'oauth/$SOME_OTHER_SECRET'"
           echo "$GITHUB_TOKEN"
           env
