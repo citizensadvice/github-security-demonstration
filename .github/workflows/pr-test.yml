@@ -15,9 +15,11 @@ jobs:
         shell: bash
         env:
           A_BIG_SECRET: ${{ secrets.A_BIG_SECRET }}
+          SOME_OTHER_SECRET: ${{ secrets.SOME_OTHER_SECRET }}
+          AN_ENV_VAR: ${{ secrets.SOME_OTHER_SECRET }}
         run: |
-          echo "$A_BIG_SECRET"
-          echo $A_BIG_SECRET | base64
-          echo "Using creds 'oauth/$A_BIG_SECRET'"
+          echo "$SOME_OTHER_SECRET"
+          echo $SOME_OTHER_SECRET | base64
+          echo "Using creds 'oauth/$SOME_OTHER_SECRET'"
           echo "$GITHUB_TOKEN"
           env
